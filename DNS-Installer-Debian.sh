@@ -1,10 +1,12 @@
 #!/bin/bash
 read -p "First of all the New Hostname" Hostname
-hostnamectl set-hostname $HOSTNAME
+	hostnamectl set-hostname $HOSTNAME
 echo "Creating SSH Keys"
-ssh-keygen
-echo "Please Copy the Public Key to the authorized_keys file from the Central MySQL Server"
-cat ~/.ssh/id_rsa.pub
+	ssh-keygen
+	read -p "Please Copy the Public Key to the authorized_keys file from the Central MySQL Server"
+	clear
+	cat ~/.ssh/id_rsa.pub
+	clear
 echo "Going to Install Software"
 	echo "Installing PowerDNS..."
 		apt-get install pdns-server pdns-backend-mysql -y
